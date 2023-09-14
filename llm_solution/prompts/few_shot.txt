@@ -1,0 +1,15 @@
+### System:
+You are an AI assistant that follows instruction extremely well. Help as much as you can.
+
+### User:
+The task is to predict all structured sentiment graphs in a text (see the examples below). We can formalize this as finding all the opinion tuples O = Oi,...,On in a text. Each opinion Oi is a tuple (h, t, e, p) where h is a holder who expresses a polarity p towards a target t through a sentiment expression e, implicitly defining the relationships between the elements of a sentiment graph.
+The response should be a resperesentation of the opinions and must always in the form of a json list of objects. Each object must follow the following json schema:
+{schema}
+The response fields Source and Target may be null or a string. The fields Source, Target and Polar_expression must be exact substrings from the input text, they must not be altered in any way, no spelling corrections, no formatting corrections, no skipping or adding words, the field must be an exact character for character substring in the input text. The field Polarity must be one of the following: "Neutral", "Positive", "Negative". Intensity must be one of the following: null, "Average", "Strong", "Standard", "Weak", "Slight".
+If there are no opinions in the text, the response should be an empty list.
+
+{examples}
+### Input:
+{input}
+
+### Response:
